@@ -86,7 +86,7 @@ public class UrlControllerTest {
     void testGetUrlInfo_Success() throws Exception {
         // Arrange
         LocalDateTime createdAt = LocalDateTime.now();
-        UrlInfoResponseDto responseDto = new UrlInfoResponseDto(originalUrl, shortUrl, createdAt, 5);
+        UrlInfoResponseDto responseDto = new UrlInfoResponseDto(originalUrl, shortUrl, createdAt);
 
         when(urlService.getUrlInfo(shortCode)).thenReturn(responseDto);
 
@@ -94,8 +94,7 @@ public class UrlControllerTest {
         mockMvc.perform(get("/api/info/{id}", shortCode))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.originalUrl").value(originalUrl))
-                .andExpect(jsonPath("$.shortUrl").value(shortUrl))
-                .andExpect(jsonPath("$.accessCount").value(5));
+                .andExpect(jsonPath("$.shortUrl").value(shortUrl));
     }
 
     @Test
