@@ -13,5 +13,4 @@ public class UrlInfoResponseDto {
     private String originalUrl;
     private String shortUrl;
     private LocalDateTime createdAt;
-    private int accessCount;
 }

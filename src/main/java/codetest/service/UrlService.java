@@ -64,8 +64,7 @@ public class UrlService {
         return new UrlInfoResponseDto(
                 url.getOriginalUrl(),
                 url.getShortUrl(),
-                url.getCreatedAt(),
-                url.getAccessCount()
+                url.getCreatedAt()
         );
     }
 
