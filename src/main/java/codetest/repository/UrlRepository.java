@@ -27,11 +27,4 @@ public class UrlRepository {
                 .filter(url -> url.getOriginalUrl().equals(originalUrl))
                 .findFirst();
     }
-
-    public void incrementAccessCount(String id) {
-        urlStore.computeIfPresent(id, (key, url) -> {
-            url.incrementAccessCount();
-            return url;
-        });
-    }
 }

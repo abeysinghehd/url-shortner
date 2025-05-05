@@ -103,7 +103,6 @@ public class UrlServiceTest {
 
         // Assert
         assertEquals(originalUrl, result);
-        verify(urlRepository).incrementAccessCount(shortCode);
     }
 
     @Test
@@ -113,7 +112,6 @@ public class UrlServiceTest {
 
         // Act & Assert
         assertThrows(ResourceNotFoundException.class, () -> urlService.getOriginalUrl(shortCode));
-        verify(urlRepository, never()).incrementAccessCount(any());
     }
 
     @Test

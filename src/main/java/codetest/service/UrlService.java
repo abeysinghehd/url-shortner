@@ -54,10 +54,6 @@ public class UrlService {
     public String getOriginalUrl(String id) {
         Url url = urlRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Short URL not found"));
-
-        // Increment access count
-        urlRepository.incrementAccessCount(id);
-
         return url.getOriginalUrl();
     }
 
