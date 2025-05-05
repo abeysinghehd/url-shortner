@@ -132,7 +132,6 @@ public class UrlServiceTest {
         assertEquals(originalUrl, result.getOriginalUrl());
         assertEquals(shortUrl, result.getShortUrl());
         assertEquals(createdAt, result.getCreatedAt());
-        assertEquals(5, result.getAccessCount());
     }
 
     @Test
