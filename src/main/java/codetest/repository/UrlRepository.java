@@ -10,7 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Repository
 public class UrlRepository {
 
-    // In-memory store using ConcurrentHashMap for thread safety
     private final Map<String, Url> urlStore = new ConcurrentHashMap<>();
 
     public Url save(Url url) {

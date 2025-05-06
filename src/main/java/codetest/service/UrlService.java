@@ -73,7 +73,6 @@ public class UrlService {
         RANDOM.nextBytes(randomBytes);
         String id = ENCODER.encodeToString(randomBytes);
 
-        // Check if ID already exists, if so, generate a new one
         if (urlRepository.findById(id).isPresent()) {
             return generateUniqueId();
         }
